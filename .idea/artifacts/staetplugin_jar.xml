@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="staetplugin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/staetplugin_jar</output-path>
+    <root id="archive" name="staetplugin.jar">
+      <element id="module-output" name="staetplugin.main" />
+    </root>
+  </artifact>
+</component>
