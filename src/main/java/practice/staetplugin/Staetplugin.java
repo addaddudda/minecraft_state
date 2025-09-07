@@ -92,7 +92,7 @@ public final class Staetplugin extends JavaPlugin implements Listener, CommandEx
         stat_point+=3;
         p.sendMessage("§e스텟 포인트가 3만큼 올랐습니다!");
         p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
-    }/*
+    }
     @EventHandler
     public void damaged_villager(EntityDamageEvent event){
         if(event.getEntity() instanceof Villager){
@@ -101,7 +101,7 @@ public final class Staetplugin extends JavaPlugin implements Listener, CommandEx
                 event.setCancelled(true);
             }
         }
-    }*/
+    }
     @EventHandler
     public void interacted_villager(PlayerInteractAtEntityEvent event){
         Player p = event.getPlayer();
