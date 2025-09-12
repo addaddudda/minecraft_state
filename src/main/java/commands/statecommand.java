@@ -23,9 +23,8 @@ public class statecommand extends JavaPlugin implements CommandExecutor {
         @Override
         public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
             Player p = (Player)sender;
-            Inventory box = Bukkit.createInventory(null, 45, "state");
+            Inventory box = Bukkit.createInventory(null, 45, "stat");
 
-            int state_point =  Staetplugin.stat_point;
 
             ItemStack sword = new ItemStack(Material.BOOK);
             ItemMeta sword_meta = sword.getItemMeta();
@@ -65,7 +64,7 @@ public class statecommand extends JavaPlugin implements CommandExecutor {
             ItemMeta netherStar_meta = netherStar.getItemMeta();
             netherStar_meta.setDisplayName("스텟 포인트");
             List<String> netherStar_lore = new ArrayList<>();
-            netherStar_lore.add("현재 스텟 포인트:" + state_point);
+            netherStar_lore.add("현재 스텟 포인트:" + Staetplugin.stat_point);
             netherStar_meta.setLore(netherStar_lore);
             netherStar.setItemMeta(netherStar_meta);
             if(args.length == 0){

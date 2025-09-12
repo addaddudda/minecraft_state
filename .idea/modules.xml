@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/staetplugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/staetplugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/staetplugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/staetplugin.test.iml" />
     </modules>
   </component>
 </project>

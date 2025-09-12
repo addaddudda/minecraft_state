@@ -25,8 +25,8 @@ public class villager extends JavaPlugin implements CommandExecutor{
         public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
             if (!(sender instanceof Player)) return false;
             Player p = (Player)sender;
-            if(args.length > 2) {
-                p.sendMessage("/villager_create");
+            if(args.length < 1) {
+                p.sendMessage("/villager_create 주민이름");
             }else if(args.length == 1){
                 Location loc = p.getLocation();
                 Villager villager = (Villager)loc.getWorld().spawnEntity(loc, EntityType.VILLAGER);
