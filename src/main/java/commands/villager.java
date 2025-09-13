@@ -1,5 +1,6 @@
 package commands;
 
+import net.kyori.adventure.text.NBTComponent;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,8 +32,11 @@ public class villager extends JavaPlugin implements CommandExecutor{
                 Location loc = p.getLocation();
                 Villager villager = (Villager)loc.getWorld().spawnEntity(loc, EntityType.VILLAGER);
                 villager.setCustomName(args[0]);
+                villager.setProfession(Villager.Profession.NONE);
+                villager.setVillagerType(Villager.Type.PLAINS);
                 villager.setCustomNameVisible(true);
                 villager.setAI(false);
+                villager.setSilent(true);
             }else{
                 p.sendMessage("명령어 이상");
             }

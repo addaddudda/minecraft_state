@@ -3,6 +3,5 @@ version: '1.0-SNAPSHOT'
 main: practice.staetplugin.Staetplugin
 api-version: '1.21'
 commands:
-  stat:
   reload_stat:
   villager_create:

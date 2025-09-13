@@ -1,11 +1,8 @@
 package practice.staetplugin;
 
-import commands.statecommand;
 import commands.villager;
+import events.changeJob_event;
 import events.stat_inventory_event;
-import net.md_5.bungee.api.chat.ClickEvent;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
@@ -13,24 +10,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerExpChangeEvent;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.NotNull;
-import net.md_5.bungee.api.chat.TextComponent;
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public final class Staetplugin extends JavaPlugin implements Listener, CommandExecutor {
     public static int speed_check = 0;
@@ -39,8 +23,8 @@ public final class Staetplugin extends JavaPlugin implements Listener, CommandEx
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new changeJob_event(), this);
         getServer().getPluginManager().registerEvents(new stat_inventory_event(), this);
-        getCommand("stat").setExecutor(new statecommand.state());
         getCommand("villager_create").setExecutor(new villager.villager_create());
         getCommand("reload_stat").setExecutor(this);
     }
