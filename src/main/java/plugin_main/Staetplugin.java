@@ -1,7 +1,8 @@
-package practice.staetplugin;
+package plugin_main;
 
 import commands.villager;
-import events.changeJob_event;
+import events.first_changeJob_event;
+import events.second_changeJob_event;
 import events.stat_inventory_event;
 import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
@@ -12,6 +13,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -23,15 +25,11 @@ public final class Staetplugin extends JavaPlugin implements Listener, CommandEx
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
-        getServer().getPluginManager().registerEvents(new changeJob_event(), this);
+        getServer().getPluginManager().registerEvents(new first_changeJob_event(), this);
         getServer().getPluginManager().registerEvents(new stat_inventory_event(), this);
+        getServer().getPluginManager().registerEvents(new second_changeJob_event(), this);
         getCommand("villager_create").setExecutor(new villager.villager_create());
         getCommand("reload_stat").setExecutor(this);
-    }
-
-    @Override
-    public void onDisable() {
-
     }
     @EventHandler
     public void levelup(PlayerLevelChangeEvent event){
@@ -42,6 +40,13 @@ public final class Staetplugin extends JavaPlugin implements Listener, CommandEx
             stat_point+=3;
             p.sendMessage("§e스텟 포인트가 3만큼 올랐습니다!");
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+        }
+    }
+    @EventHandler
+    public void firstJoin(PlayerJoinEvent event){
+        Player p = (Player) event.getPlayer();
+        if(!p.hasPlayedBefore()){
+
         }
     }
     @Override

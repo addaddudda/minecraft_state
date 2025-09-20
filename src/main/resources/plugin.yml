@@ -1,6 +1,6 @@
 name: staetplugin
 version: '1.0-SNAPSHOT'
-main: practice.staetplugin.Staetplugin
+main: plugin_main.Staetplugin
 api-version: '1.21'
 commands:
   reload_stat:
